@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <!-- Carregar assets do GitHub -->
+    <a-assets>
+      <img id="texture1" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/textura1.png">
+      <img id="texture2" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/textura2.png">
+
+      <!-- Cubemap para o plano de fundo -->
+      <img id="right" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/right.jpg">
+      <img id="left" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/left.jpg">
+      <img id="top" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/top.jpg">
+      <img id="bottom" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/bottom.jpg">
+      <img id="front" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/front.jpg">
+      <img id="back" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/back.jpg">
+    </a-assets>
+
+    <!-- Configurar o ambiente -->
+    <a-cubemap id="cubemap" src="#right #left #top #bottom #front #back"></a-cubemap>
+    <a-sky src="#cubemap" rotation="0 180 0"></a-sky>
+    <a-light type="ambient" intensity="0.7"></a-light>
+    <a-light type="directional" position="-5 5 5" target="#scene" intensity="0.5"></a-light>
+
+    <!-- Adicionar cubo -->
+    <a-box src="#texture1" position="0 1 -4" rotation="0 45 45" scale="1 1 1.5" animation="property: rotation; to: 0 405 45; loop: true; dur: 5000;"></a-box>
+    <!-- Adicionar um cilindro -->
+    <a-cylinder src="#texture2" position="2.5 1 -4" radius="0.5" height="2" animation="property: rotation; to: 0 405 45; loop: true; dur: 5000;"></a-cylinder>
+
+    <!-- Adicionar um cone -->
+    <a-cone src="#texture1" position="-2.5 1 -4" radius-bottom="0.2" radius-top="0.0" height="2" color="#FF6347" animation="property: rotation; to: 0 405 45; loop: true; dur: 5000;"></a-cone>
+
+    <!-- Adicionar uma esfera -->
+    <a-sphere src="#texture2" position="-5 1 -4" radius="1" color="#4B0082" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000;"></a-sphere>
+
+    <!-- Adicionar mais elementos conforme necessário -->
+
+  </a-scene>
+</body>
+</html>
