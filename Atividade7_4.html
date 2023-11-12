@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<!--  Atividade 7.4 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <title> Atividade 7.4</title>
 </head>
 <body>
   <a-scene>
@@ -11,34 +13,26 @@
     <a-assets>
       <img id="texture1" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/textura1.png">
       <img id="texture2" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/textura2.png">
+      <img id="texture3" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/textura3.png">
+      <img id="texture4" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/textura4.png">
 
-      <!-- Cubemap para o plano de fundo -->
-      <img id="right" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/right.jpg">
-      <img id="left" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/left.jpg">
-      <img id="top" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/top.jpg">
-      <img id="bottom" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/bottom.jpg">
-      <img id="front" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/front.jpg">
-      <img id="back" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Storforsen/back.jpg">
+      <!-- Imagem equiretangular para o plano de fundo -->
+      <img id="background" src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Center_of_the_Milky_Way_Galaxy_IV_%E2%80%93_Composite.jpg">
     </a-assets>
 
-    <!-- Configurar o ambiente -->
-    <a-cubemap id="cubemap" src="#right #left #top #bottom #front #back"></a-cubemap>
-    <a-sky src="#cubemap" rotation="0 180 0"></a-sky>
+    <!--  ambiente -->
+    <a-sky src="#background" rotation="0 180 0"></a-sky>
     <a-light type="ambient" intensity="0.7"></a-light>
-    <a-light type="directional" position="-5 5 5" target="#scene" intensity="0.5"></a-light>
+    <a-light type="directional" position="-5 5 5" light="castShadow:true" target="#scene" intensity="0.5"></a-light>
 
-    <!-- Adicionar cubo -->
-    <a-box src="#texture1" position="0 1 -4" rotation="0 45 45" scale="1 1 1.5" animation="property: rotation; to: 0 405 45; loop: true; dur: 5000;"></a-box>
-    <!-- Adicionar um cilindro -->
-    <a-cylinder src="#texture2" position="2.5 1 -4" radius="0.5" height="2" animation="property: rotation; to: 0 405 45; loop: true; dur: 5000;"></a-cylinder>
-
-    <!-- Adicionar um cone -->
-    <a-cone src="#texture1" position="-2.5 1 -4" radius-bottom="0.2" radius-top="0.0" height="2" color="#FF6347" animation="property: rotation; to: 0 405 45; loop: true; dur: 5000;"></a-cone>
-
-    <!-- Adicionar uma esfera -->
-    <a-sphere src="#texture2" position="-5 1 -4" radius="1" color="#4B0082" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000;"></a-sphere>
-
-    <!-- Adicionar mais elementos conforme necessário -->
+    <!-- cubo -->
+    <a-box src="#texture1" position="0 2 -4" light="castShadow:true" rotation="0 45 45" scale="1 1 1.5" color="#800000" animation="property: rotation; to: 0 405 45; loop: true; dur: 5000;"></a-box>
+    <!-- icosaedro -->
+    <a-icosahedron src="#texture2" position="2.5 1 -4" light="receiveShadow:true" radius="0.5" animation="property: rotation; to: 0 405 45; loop: true; dur: 5000;"></a-icosahedron>
+    <!-- tetraedro -->
+    <a-tetrahedron src="#texture3" position="-2.5 0 -4" light="castShadow:true" radius="1" color="#FFD700" animation="property: rotation; to: 0 405 45; loop: true; dur: 5000;"></a-tetrahedron>
+    <!-- octaedro -->
+    <a-octahedron src="#texture4" position="-5 1 -4" light="castShadow:true" scale="1" color="#4B0082" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000;"></a-octahedron>
 
   </a-scene>
 </body>
