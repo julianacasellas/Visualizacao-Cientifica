@@ -6,3 +6,6 @@
 Insira na cena uma imagem de fundo do tipo equiretangular ou cubemap. 
 Coloque na cena alguns poliedros com texturas e ajuste a iluminação da cena. 
 Crie animações de iluminação ou de movimento de alguns poliedros nesta cena."
+>
+> **Resultado da execução do código**:
+> <img src="https://raw.githubusercontent.com/julianacasellas/Visualizacao-Cientifica/main/Atividade%207.4%20resultado.png" alt="Resultado">
