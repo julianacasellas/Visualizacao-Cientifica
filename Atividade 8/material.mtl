@@ -1,0 +1,5 @@
+newmtl NomeDoMaterial
+Ka 1.000 1.000 1.000  # Cor ambiente (RGB)
+Kd 0.800 0.800 0.800  # Cor difusa (RGB)
+Ks 0.000 0.000 0.000  # Cor especular (RGB)
+Ns 0.000             # Exponente especular
